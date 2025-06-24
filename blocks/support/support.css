@@ -107,7 +107,9 @@
 }
 
 .section.support-container #form-message {
-    min-height: var(--acs-copilot-form-contact-us-message-max-height); 
+    resize: vertical;
+    min-height: 150px;
+    max-height: 400px;
 }
 
 
