@@ -15,7 +15,7 @@
   /* Proper spacing */
   --acs-copilot-body-font-weight: 400;
   /* Regular weight */
-  --acs-copilot-body-text-color: white;
+  --acs-copilot-body-text-color: #ffffff;
   --acs-copilot-body-bg-color: #000e22;
 
   /* Body Spacing */
@@ -129,6 +129,7 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --gradient-color: linear-gradient(90deg, #F24CB8, #C844DC, #9A47E2, #7155FA);
+  --form-background-color: #000;
 
   /* Max-width values  */
   --default-max-width: 1280px;
@@ -172,6 +173,26 @@
   /* Adobe Grey */
   --acs-copilot-blockquote-quote-line-height: 0;
   --acs-copilot-blockquote-paragraph-margin-bottom: 8px;
+  /* Forms Variables */
+  --acs-copilot-form-justify-content: flex-start;
+  --acs-copilot-form-height: auto;
+  --acs-copilot-form-flex-direction: column;
+  --acs-copilot-form-padding-bottom: 40px;
+  --acs-copilot-form-padding-top: 40px;
+  --acs-copilot-form-margin-top: 0;
+  --acs-copilot-form-gap-1: 24px;
+  --acs-copilot-form-input-filed-background:#18191a;
+  --acs-copilot-form-button-background: #ff0048e7;
+  --acs-copilot-form-contact-us-message-max-height: 150px;
+  --acs-copilot-form-cursor: pointer;
+  --acs-copilot-arrow-background-position: right 15px center;
+  --acs-copilot-default-arrow-appearance: none;
+  --acs-copilot-arrow-background-repeat: no-repeat;
+  --acs-copilot-button-padding:14px 0;
+  --acs-copilot-dropdown-arrow-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' viewBox='0 0 16 16' fill='%2338B2AC' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4' stroke='%2338B2AC' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  --acs-copilot-text-shadow: 1px 1px 8px #38B2AC;
+  --acs-copilot-h1-text-shadow: 0 0 2px #38B2AC,    0 0 5px #38B2AC,      0 0 15px #38B2AC,     0 0 30px #38B2AC;  
+
 
   .h1,
   h1 {
