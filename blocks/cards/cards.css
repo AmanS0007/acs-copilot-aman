@@ -1,10 +1,10 @@
 .cards-container {
   text-align: center;
   padding: 20px;
-  background: black;
+  background: var(--acs-body-background);
   border-radius: 10px;
-  color: white;
-  font-family: Arial, sans-serif;
+  color: var(--acs-copilot-body-text-color);
+  font-family: var(--body-font-family);
 }
 
 /* Carousel Wrapper */
@@ -26,10 +26,10 @@
 
 /* Individual Card */
 .cards-card {
-  background: black;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 300px;
+  background: var(--acs-body-background);
+  padding: var(--acs-corosal-card-padding);
+  border-radius: var(--acs-corosal-card-border-radius);
+  max-width: var(--acs-corosal-card-max-width);
   flex: 1;
   display: none;
   transition: transform 0.3s ease;
@@ -41,9 +41,9 @@
 
 /* Card Image */
 .cards-card .card-image {
-  width: 300px;
-  height: 200px;
-  border-radius: 10px;
+  width: var(--acs-corosal-card-image-width);
+  height: var(--acs-corosal-card-image-height);
+  border-radius: var(--acs-corosal-card-);
   box-shadow: var(--box-shadow-neon);
   transition: box-shadow 0.3s ease;
 }
@@ -58,31 +58,34 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
+  width: var(--acs-corosal-button-width);
+  height: var(--acs-corosal-button-height);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  outline: none;
 }
 
 /* Previous Button */
 .carousel-prev {
-  left: -40px;
+  left: -32px;
 }
 
 /* Next Button */
 .carousel-next {
-  right: -40px;
+  right: -32px;
 }
 
 /* Navigation Button Images */
 .carousel-prev-icon,
 .carousel-next-icon {
-  width: 100%;
-  height: 100%;
+  width: var(--acs-corosal-button-width);
+  height: var(--acs-corosal-button-icon-height);
   object-fit: contain;
-  filter: invert(1); /* Makes white icons visible on black background */
+  display: block;
+  opacity: 1;
+  filter: none;
+  padding-left: var(--acs-corosal-button-icon-padding-left);
+  padding-right: var(--acs-corosal-button-icon-padding-right);
 }

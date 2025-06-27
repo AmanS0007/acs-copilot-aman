@@ -5,7 +5,7 @@ header .nav-wrapper {
   width: 100%;
   z-index: 1000;
   position: fixed;
-  color: var(--acs-copilot-body-text-color);
+  background:var(--acs-header-background);
 }
 
 header nav {
@@ -21,6 +21,7 @@ header nav {
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
+  
 }
 
 header nav[aria-expanded='true'] {
@@ -39,6 +40,7 @@ header nav[aria-expanded='true'] {
     gap: 0 32px;
     max-width: 1264px;
     padding: 0 32px;
+    
   }
 
   header nav[aria-expanded='true'] {

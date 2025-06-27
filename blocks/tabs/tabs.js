@@ -42,26 +42,15 @@ export default async function decorate(block) {
       // Video event listeners
       video.addEventListener('play', () => {
         video.classList.add('video-start-animation');
-        const ctaLink = tabContent.querySelector('.cta-url');
-        if (ctaLink) ctaLink.classList.add('cta-link-show');
+        // CTA link reference removed
       });
       video.addEventListener('pause', () => video.classList.remove('video-start-animation'));
       video.addEventListener('ended', () => video.classList.remove('video-start-animation'));
       tabContent.appendChild(video);
     }
-    // Create CTA link
-    const ctaLink = document.createElement('a');
-    ctaLink.classList.add('cta-url', 'button');
-    // Find the second link in the second div - this contains your CTA text and link
-    const ctaAnchor = tab.querySelectorAll('div[data-valign="middle"]')[1]?.querySelectorAll('p a')[1];
-    if (ctaAnchor) {
-      ctaLink.href = ctaAnchor.href;
-      ctaLink.textContent = ctaAnchor.textContent;
-    } else {
-      ctaLink.href = videoLink?.href || '#';
-      ctaLink.textContent = 'Learn More';
-    }
-    tabContent.appendChild(ctaLink);
+    
+    // CTA link creation removed as requested
+    
     // Tab interaction
     tabButton.addEventListener('click', () => {
       // Update active state
