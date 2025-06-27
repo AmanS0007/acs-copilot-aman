@@ -29,7 +29,7 @@ export default async function decorate(block) {
     // Create and set up the feature header
     const featureHeader = document.createElement('div');
     featureHeader.className = 'feature-header';
-    featureHeader.textContent = feature.children[0]?.textContent || `Feature ${index + 1}`;
+    featureHeader.innerHTML = feature.children[0]?.innerHTML || `Feature ${index + 1}`;
     featureHeader.setAttribute('data-index', index);
 
     // Create and set up the feature description

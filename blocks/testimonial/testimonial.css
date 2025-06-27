@@ -1,15 +1,8 @@
 /* Testimonial Section - Background */
 .testimonial {
-  background: linear-gradient(135deg, #380a6b 30%, #4a0a46 70%);
+  /* background: linear-gradient(135deg, #380a6b 30%, #4a0a46 70%); */
   padding: 30px 15px;
   text-align: center;
-}
-
-.testimonial h2 {
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-xl);
-  color: #fff;
-  margin-bottom: 30px;
 }
 
 /* Scroll Wrapper */
@@ -71,7 +64,7 @@
 
 .testimonial-info h5 {
   margin: 0;
-  font-size: 14px;
+  /* font-size: 14px; */
   color: #333;
 }
 
@@ -81,18 +74,13 @@
 }
 
 .testimonial-info a {
-  color: lightskyblue; /* Standard hyperlink color */
+  color: var(--dark-color); /* Standard hyperlink color */
   text-decoration: none; /* Remove default underline */
-  font-size: 12px;
-}
-
-.testimonial-info a:hover {
-  text-decoration: underline; /* Underline on hover */
 }
 
 /* Description Below */
 .testimonial-content p {
-  font-size: 14px;
+  /* font-size: 14px; */
   line-height: 1.5;
   color: #333;
   white-space: normal;

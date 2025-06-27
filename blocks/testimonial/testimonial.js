@@ -62,4 +62,19 @@ export default function decorate(block) {
       </div>
     </div>
   `;
+
+  // Functionality to pause and play the testimonial rows
+  const testimonialWrapper = document.querySelector('.testimonial-wrapper');
+
+  testimonialWrapper.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.testimonial-content-wrapper').forEach((card) => {
+      card.style.animationPlayState = 'paused';
+    });
+  });
+
+  testimonialWrapper.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.testimonial-content-wrapper').forEach((card) => {
+      card.style.animationPlayState = 'running';
+    });
+  });
 }

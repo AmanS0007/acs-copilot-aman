@@ -95,6 +95,21 @@ export default async function decorate(block) {
 
   block.replaceChildren(form);
 
+  // Replace input#form-message[type="textarea"] with textarea immediately after form is rendered
+  setTimeout(function () {
+    var input = form.querySelector('input#form-message[type="textarea"]');
+    if (input) {
+      var textarea = document.createElement('textarea');
+      textarea.id = input.id;
+      textarea.name = input.name;
+      textarea.placeholder = input.placeholder;
+      textarea.setAttribute('aria-labelledby', input.getAttribute('aria-labelledby'));
+      textarea.value = input.value;
+      textarea.className = input.className;
+      input.parentNode.replaceChild(textarea, input);
+    }
+  }, 0);
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (form.checkValidity()) {

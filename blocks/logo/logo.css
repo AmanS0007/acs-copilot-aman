@@ -1,26 +1,19 @@
 .logo {
-  padding: 20px;
+  padding: 0;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .logo h2 {
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-l);
   position: relative;
-  cursor: pointer;
-}
-
-.logo h2:hover {
-  text-decoration: underline;
+  margin-bottom: 60px;
 }
 
 .logo .logo-slideshow {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  animation: slide-left 20s linear infinite;
   will-change: transform;
 }
 

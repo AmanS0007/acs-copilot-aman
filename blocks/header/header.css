@@ -1,10 +1,11 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  top: 0;
+  background-color: var(--acs-copilot-body-bg-color);
   width: 100%;
-  z-index: 2;
+  z-index: 1000;
   position: fixed;
-  color: var(--text-color);
+  background:var(--acs-header-background);
 }
 
 header nav {
@@ -20,6 +21,7 @@ header nav {
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
+  
 }
 
 header nav[aria-expanded='true'] {
@@ -38,6 +40,7 @@ header nav[aria-expanded='true'] {
     gap: 0 32px;
     max-width: 1264px;
     padding: 0 32px;
+    
   }
 
   header nav[aria-expanded='true'] {
@@ -49,10 +52,6 @@ header nav[aria-expanded='true'] {
 header nav p {
   margin: 0;
   line-height: 1;
-}
-
-header nav a:any-link {
-  color: currentcolor;
 }
 
 /* hamburger */
@@ -137,12 +136,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 }
 
 /* brand */
-header .nav-brand {
+header .section.nav-brand {
   grid-area: brand;
   flex-basis: 128px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  padding: 3px 16px;
+  margin: 0;
 }
 
 header nav .nav-brand img {
@@ -151,11 +152,12 @@ header nav .nav-brand img {
 }
 
 /* sections */
-header nav .nav-sections {
+header nav .section.nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
+  margin: 0;
 }
 
 header nav[aria-expanded='true'] .nav-sections {
@@ -169,21 +171,25 @@ header nav .nav-sections ul {
   font-size: 1.8rem;
 }
 
-header nav .nav-sections ul > li {
-  font-weight: 500;
-}
-
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
 }
 
 header nav .nav-sections ul > li > ul > li {
-  color: white;
   margin-left: 20%;
   font-weight: 400;
 }
 
+header nav .nav-sections ul > li > ul > li a {
+  color: var(--dark-color);
+}
+
 @media (width >= 900px) {
+
+  header nav .nav-brand > .default-content-wrapper > p > a:hover {
+    border: none;
+  }
+
   header nav .nav-sections {
     display: block;
     visibility: visible;
@@ -202,38 +208,22 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 7%;
+    gap: 8%;
     margin: 0;
     justify-content: flex-end;
+    list-style: none;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
-    padding-left: 3%;
+    padding: 0 0 2%;
+    margin: 0;
+    border-bottom: 2px solid var(--text-color);
   }
 
   header nav .nav-sections ul > li:hover {
     cursor: pointer;
-  }
-
-  header nav .nav-sections ul > li::before {
-    content: '';
-    position: absolute;
-    left: -25px;
-    width: 0; /* Initially no width */
-    height: 40px;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  header nav .nav-sections .default-content-wrapper > ul > li:hover::before{
-    background-image: url('../../icons/arrow.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 45px;
-    height: 40px;
-    border-radius: 50%;
-    background-position: left;
   }
 
   header nav .nav-sections > ul > li > ul {
@@ -242,18 +232,18 @@ header nav .nav-sections ul > li > ul > li {
     list-style: none;
   }
 
+  header nav .nav-sections ul > li > ul {
+    margin-top: 20px;
+  }
+
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     position: absolute;
     display: block;
     list-style: none;
-    z-index: 1;
     opacity: 1;
-    color: black;
     width: 100%;
-    padding: 5px 10px 10px 15px;
+    padding: 0 10px;
     background-color: var(--light-color);
-    white-space: initial;
-    font-size: 1.8rem;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='false'] > ul {
@@ -264,18 +254,13 @@ header nav .nav-sections ul > li > ul > li {
     content: '';
     position: absolute;
     top: -8px;
-    left: 16px;
+    left: 36px;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--light-color);
   }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-    color: black;
-  } 
 }
 
 /* tools */

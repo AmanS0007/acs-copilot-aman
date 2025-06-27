@@ -28,46 +28,51 @@ export default function decorate(block) {
 
   block.replaceChildren(logoContent);
 
-  // Get the newly created slideshow container
   const slideshow = block.querySelector('.logo-slideshow');
 
-  // Function to duplicate logos to create an infinite scrolling effect
-  function createClones() {
-    const cards = slideshow.querySelectorAll('.logo-card');
-    cards.forEach((card) => {
-      const clone = card.cloneNode(true); // Clone each logo card
-      slideshow.appendChild(clone); // Append the clone to the slideshow
-    });
+  function createClones(times = 2) {
+    const cards = Array.from(slideshow.querySelectorAll('.logo-card'));
+    for (let i = 0; i < times; i += 1) {
+      cards.forEach((card) => {
+        const clone = card.cloneNode(true);
+        slideshow.appendChild(clone);
+      });
+    }
   }
+  createClones(2);
 
-  createClones(); // Call function to create clones
-
-  // Function to animate the logos in an infinite loop
   function slideLogos() {
-    let start = Date.now(); // Capture the starting time
-    const speed = 0.05; // Adjust scrolling speed
+    const cards = slideshow.querySelectorAll('.logo-card');
+    const singleSetWidth = Array.from(cards)
+      .slice(0, cards.length / 3)
+      .reduce((acc, card) => acc + card.offsetWidth, 0);
 
+    let scrollAmount = 0;
+    const speed = 0.5; 
     function frame() {
-      const timePassed = Date.now() - start;
-      const scrollAmount = timePassed * speed; // Calculate scroll distance
-      slideshow.style.transform = `translateX(-${scrollAmount}px)`;
-
-      // Reset position when half the slideshow width is scrolled
-      if (scrollAmount >= slideshow.scrollWidth / 2) {
-        start = Date.now(); // Reset start time
-        slideshow.style.transform = 'translateX(0)'; // Reset position
+      scrollAmount += speed;
+      if (scrollAmount >= singleSetWidth * 2) {
+        scrollAmount -= singleSetWidth;
       }
-
-      requestAnimationFrame(frame); // Request next animation frame
+      slideshow.style.transform = `translateX(-${scrollAmount}px)`;
+      requestAnimationFrame(frame);
     }
 
-    frame(); // Start animation
+    frame();
   }
 
-  slideLogos(); // Call function to start the animation
+  const observer = new window.IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        slideLogos();
+        obs.disconnect();
+        }
+    });
+  }, { threshold: 0.1 });
 
-  // Add a click event to the heading to toggle a class for styling
+  observer.observe(block);
+
   logoTitle.addEventListener('click', () => {
-    logoTitle.classList.toggle('clicked'); // Toggle 'clicked' class
+    logoTitle.classList.toggle('clicked');
   });
 }
