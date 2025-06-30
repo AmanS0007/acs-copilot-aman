@@ -111,6 +111,7 @@ export default function decorate(block) {
   prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + totalCards) % totalCards;
     updateCards();
+    prevButton.blur(); // Remove focus after click
   });
 
   /**
@@ -119,6 +120,7 @@ export default function decorate(block) {
   nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % totalCards;
     updateCards();
+    nextButton.blur(); // Remove focus after click
   });
 
   // Initialize carousel display

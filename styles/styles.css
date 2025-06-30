@@ -55,6 +55,8 @@
   --acs-copilot-font-weight-h-p: 400;
   --acs-copilot-line-height-h-p: 1.7;
 
+  --acs-header-background: #0D1327;
+  --acs-body-background: #000;
   /* Link Colors */
   --acs-copilot-link-color: var(--acs-copilot-body-text-color);
   --acs-copilot-link-hover-color: #9A47E2;
@@ -193,6 +195,138 @@
   --acs-copilot-text-shadow: 1px 1px 8px #38B2AC;
   --acs-copilot-h1-text-shadow: 0 0 2px #38B2AC,    0 0 5px #38B2AC,      0 0 15px #38B2AC,     0 0 30px #38B2AC;  
 
+  /* Cards Variables */
+  --acs-corosal-button-height: 90px;
+  --acs-corosal-button-width: 60px;
+  --acs-corosal-button-icon-height: 28px;
+  --acs-corosal-button-icon-width: 35px;
+  --acs-corosal-button-icon-padding-left: 5px;
+  --acs-corosal-button-icon-padding-right: 5px;
+  --acs-corosal-card-padding: 20px;
+  --acs-corosal-card-border-radius: 10px;
+  --acs-corosal-card-max-width: 300px;
+  --acs-corosal-card-image-height: 200px;
+  --acs-corosal-card-image-width: 300px;
+  
+/* Product Hero Variables */
+--acs-hero-padding: 50px;
+--acs-hero-border-radius: 15px;
+--acs-hero-gap: 20px;
+--acs-hero-center-padding: 100px 20px;
+--acs-hero-center-width: 97%;
+--acs-hero-center-width: 100%;
+--acs-hero-center-height: 100%;
+--acs-hero-center-max-width: 800px;
+--acs-hero-center-max-height: 800px;
+--acs-summary-margin-bottom: 20px;
+--acs-summary-h2-font-size: 88px;
+--acs-summary-h2-line-height: 1.2;
+
+/* Feature Section Variables */
+--acs-feature-margin: 60px 50px 40px;
+--acs-feature-center-width: 100%;
+--acs-feature-center-height: 100%;
+--acs-feature-center-max-width: 800px;
+--acs-feature-center-max-height: 800px;
+--acs-feature-video-width: 100%;
+--acs-feature-video-height: auto;
+--acs-feature-video-border-radius: var(--acs-hero-border-radius);
+--acs-feature-video-box-shadow: var(--box-shadow-neon);
+--acs-feature-video-transition: transform 0.3s ease, box-shadow 0.3s ease;
+--acs-feature-video-cursor: pointer;
+--acs-feature-content-width: var(--acs-feature-center-width);
+--acs-feature-content-padding: var(--acs-corosal-card-padding);
+--acs-feature-content-text-align: left;
+--acs-feature-content-h2-font-size: 2.5em;
+--acs-feature-content-h2-margin-bottom: 15px;
+--acs-feature-content-h2-font-weight: bold;
+
+/* Video Section Variables */
+--acs-video-margin: 24px auto 24px 0;
+--acs-video-play-button-width: 44px;
+--acs-video-play-button-height: 44px;
+--acs-video-play-button-border-radius: 50%;
+--acs-video-play-button-border-top: 12px solid transparent;
+--acs-video-play-button-border-bottom: 12px solid transparent;
+--acs-video-play-button-border-left: 18px solid;
+--acs-video-play-button-border-left-offset: 2px;
+--acs-video-h1-margin: 20px;
+--acs-video-margin: 24px auto;
+
+/* Tabs Section Variables */
+--acs-tabs-margin-top: 20px;
+--acs-tabs-padding-top: 20px;
+--acs-tabs-border-radius: 10px;
+--acs-tabs-font-size: 20px;
+--acs-tabs-min-width: 140px;
+--acs-tabs-gap: 10px;
+--acs-tabs-padding: 20px 40px;
+--acs-tabs-margin: 0 10px;
+--acs-tabs-tab-media-width: 24px;
+--acs-tabs-tab-media-height: 24px;
+--acs-tabs-tab-media-margin-right: 10px;
+--acs-tabs-tab-media-top: -2px;
+--acs-tabs-tab-media-left: -2px;
+--acs-tabs-tab-media-right: -2px;
+
+  /* Product Hero gardient variables */
+    --acs-hero-glow-purple: rgba(111, 44, 255, 0.65);
+    --acs-hero-glow-pink: rgba(255, 91, 140, 0.45);
+    --acs-hero-glow-yellow: rgba(255, 184, 108, 0.25);
+    --acs-hero-glow-lavender: rgba(168, 85, 247, 0.2);
+    --acs-hero-glow-orange: rgba(251, 191, 36, 0.12);
+
+  /* === Glow Positions === */
+    --acs-hero-pos-purple: 10% 25%;
+    --acs-hero-pos-pink: 8% 40%;
+    --acs-hero-pos-yellow: 5% 55%;
+    --acs-hero-pos-lavender: 12% 30%;
+    --acs-hero-pos-orange: 15% 15%;
+  
+  /* === Other Controls === */
+    --acs-hero-glow-inset: -100px -200px -100px -200px;
+    --acs-hero-glow-blur: 60px;
+    --acs-hero-glow-opacity: 0.5;
+
+  /* === Summary Section Glow Controls === */
+    --acs-summary-glow-inset: -80px -150px -80px -150px;
+
+    --acs-summary-pos-purple: 50% 20%;
+    --acs-summary-pos-pink: 50% 35%;
+    --acs-summary-pos-yellow: 50% 50%;
+    --acs-summary-pos-lavender: 50% 25%;
+    --acs-summary-pos-orange: 50% 70%;
+
+    --acs-summary-glow-blur: 60px;
+    --acs-summary-glow-opacity: 0.8;
+
+
+  /* === Content Section Glow Controls === */
+    --acs-content-glow-inset: -60px -100px -100px -80px;
+
+    --acs-content-pos-purple: 35% 30%;
+    --acs-content-pos-pink: 30% 60%;
+    --acs-content-pos-yellow: 25% 75%;
+    --acs-content-pos-lavender: 40% 50%;
+    --acs-content-pos-orange: 70% 85%;
+
+    --acs-content-glow-blur: 70px;
+    --acs-content-glow-opacity: 1;
+
+
+  /* === Video Section Glow Controls === */
+    --acs-video-glow-inset: -60px -120px -100px -100px;
+
+    --acs-video-pos-purple: 30% 40%;
+    --acs-video-pos-pink: 25% 65%;
+    --acs-video-pos-yellow: 20% 80%;
+    --acs-video-pos-lavender: 40% 50%;
+    --acs-video-pos-orange: 70% 85%;
+
+    --acs-video-glow-blur: 90px;
+    --acs-video-glow-opacity: 1.2;
+
+
 
   .h1,
   h1 {
@@ -329,7 +463,7 @@
   }
 
   body {
-    background-color: var(--acs-copilot-body-bg-color);
+    background-color: var(--acs-body-background);
     font-size: var(--acs-copilot-body-font-size);
     font-family: var(--body-font-family);
     line-height: var(--acs-copilot-body-line-height);
@@ -338,6 +472,7 @@
     overflow-wrap: break-word;
     margin: var(--acs-copilot-body-margin);
     padding: var(--acs-copilot-body-padding);
+    overflow-x: hidden;
   }
 
   body.appear {
