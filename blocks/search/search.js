@@ -235,7 +235,7 @@ function searchInput(block, config) {
  */
 function searchIcon() {
   const icon = document.createElement('span');
-  icon.classList.add('icon', 'icon-search-dark-theme');
+  icon.classList.add('icon', 'icon-white-search');
   return icon;
 }
 

@@ -22,6 +22,8 @@ z.summary {
 /* Specific styles for summary positions */
 .summary-container .summary-wrapper .summary.centre {
   text-align: center;
+  padding-block-end: 30px;
+  padding-block-start: 30px;
 }
  
 .summary-container .summary-wrapper .summary.left {
