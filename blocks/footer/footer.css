@@ -34,10 +34,14 @@ footer .footer .default-content-wrapper > ul li a {
   color: var(--acs-copilot-primary-text-color);
   text-decoration: none;
   font-size: 16px;
+  transition: var(--acs-copilot-link-transition);
 }
 
+/* Add purple hover effect like header */
 footer .footer .default-content-wrapper > ul li a:hover {
-  text-decoration: underline;
+  color: var(--acs-copilot-link-hover-color);
+  padding: 2px;
+  border-bottom: 2px solid var(--acs-copilot-link-hover-color);
 }
 
 /* Footer bottom with copyright and back to top */
@@ -65,7 +69,7 @@ footer .footer .back-to-top {
   display: flex;
   align-items: center;
   color: #999;
-  text-decoration: none;
+  /* text-decoration: none; */
   font-size: small;
   transition: color 0.3s ease;
 }

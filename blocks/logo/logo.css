@@ -1,25 +1,29 @@
 .logo {
-  padding: 0;
+  padding: 20px 0;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
 }
-
 .logo h2 {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+.logo {
+  position: relative;
+  padding: 20px 0;
+  overflow: hidden;
 }
 
 .logo .logo-slideshow {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  will-change: transform;
+  animation: slide-left 15s linear infinite;
 }
 
 .logo .logo-card {
   flex: 0 0 auto;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 .logo .logo-card img {
@@ -28,23 +32,45 @@
   object-fit: contain;
 }
 
-@media (width <= 600px) {
-  .logo {
-    padding: 10px;
-  }
-
-  .logo .logo-card img {
-    width: 50px;
-    height: 50px;
-  }
+/* Edge fade effect */
+.logo::before,
+.logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
+.logo::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.logo::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.logo {
+  background-color: #000; 
+}
+
+/* Animation */
 @keyframes slide-left {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo .logo-card img {
+    width: 60px;
+    height: 60px;
   }
 }
