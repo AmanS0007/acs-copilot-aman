@@ -32,19 +32,13 @@ export default function decorate(block) {
       </div>
     `).join('');
 
-  // Update block content
+  // Update block content - combine all testimonials into a single row
   block.innerHTML = `
     <div class="testimonial-wrapper">
-      <div class="testimonial-scroll top">
+      <div class="testimonial-scroll">
         <div class="testimonial-content-wrapper">
-          ${createTestimonialHTML(testimonialsData.slice(0, 4))}
-          ${createTestimonialHTML(testimonialsData.slice(0, 4))} <!-- Duplicate for smooth loop -->
-        </div>
-      </div>
-      <div class="testimonial-scroll bottom">
-        <div class="testimonial-content-wrapper">
-          ${createTestimonialHTML(testimonialsData.slice(4))}
-          ${createTestimonialHTML(testimonialsData.slice(4))} <!-- Duplicate for smooth loop -->
+          ${createTestimonialHTML(testimonialsData)}
+          ${createTestimonialHTML(testimonialsData)} <!-- Duplicate for smooth loop -->
         </div>
       </div>
     </div>

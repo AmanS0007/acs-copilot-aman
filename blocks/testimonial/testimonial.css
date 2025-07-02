@@ -31,7 +31,6 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-height: 120px;
   position: relative;
 }
 
@@ -86,7 +85,6 @@
   color: var(--acs-copilot-primary-text-color);
   font-weight: bold;
   font-size: large;
-  /* text-decoration: underline 2px; */
 }
 
 .author-info p {
@@ -109,17 +107,9 @@
   animation: scroll-left 50s linear infinite;
 }
 
-.testimonial-scroll.bottom .testimonial-content-wrapper {
-  animation: scroll-right 50s linear infinite;
-}
 
-/* Smooth Scrolling Animations */
+/* Smooth Scrolling Animation */
 @keyframes scroll-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
-}
-
-@keyframes scroll-right {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
 }
