@@ -20,17 +20,19 @@
 
 /* Testimonial Card */
 .testimonial-card {
-  background-color: white;
+  background-color: var(--dark-color);
   padding: 20px;
   margin: 12px;
   border-radius: 10px;
-  min-width: 300px;
-  max-width: 360px;
+  min-width: 400px;
+  max-width: 500px;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 120px;
+  position: relative;
 }
 
 /* Hover Effect */
@@ -38,56 +40,67 @@
   transform: translateY(-5px);
 }
 
-/* Header (Image + Info) */
-.testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Quote content at the top */
+.testimonial-content {
+  margin-bottom: 20px;
 }
 
-/* Image */
-.testimonial-card picture {
-  flex-shrink: 0;
-}
-
-.testimonial-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-/* Title & Link beside Image */
-.testimonial-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.testimonial-info h5 {
-  margin: 0;
-  /* font-size: 14px; */
-  color: #333;
-}
-
-/* Ensure the hyperlink is plain and not a button */
-.testimonial-info p {
-  margin: 5px 0; /* Add spacing */
-}
-
-.testimonial-info a {
-  color: var(--dark-color); /* Standard hyperlink color */
-  text-decoration: none; /* Remove default underline */
-}
-
-/* Description Below */
-.testimonial-content p {
-  /* font-size: 14px; */
+.testimonial-content p.quote {
   line-height: 1.5;
-  color: #333;
+  color: var(--acs-copilot-primary-text-color);
   white-space: normal;
   overflow: visible;
   text-overflow: initial;
   word-wrap: break-word;
-  margin-top: 10px;
+  font-style: italic;
+  position: relative;
+  padding-left: 15px;
+}
+
+.testimonial-content p.quote::before {
+  content: '"';
+  font-size: 24px;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+.testimonial-content p.quote::after {
+  content: '"';
+  font-size: 24px;
+}
+
+/* Author info at the bottom right */
+.testimonial-author {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.author-info {
+  text-align: right;
+}
+
+.author-info h5 {
+  margin: 0;
+  color: var(--acs-copilot-primary-text-color);
+  font-weight: bold;
+  font-size: large;
+  text-decoration: underline 2px;
+}
+
+.author-info p {
+  margin: 5px 0;
+}
+
+.author-info a {
+  color: var(--acs-copilot-primary-text-color);
+  text-decoration: none;
+  font-size: small;
+}
+
+.author-info a:hover {
+  text-decoration: underline;
 }
 
 /* Scroll Animation Containers */

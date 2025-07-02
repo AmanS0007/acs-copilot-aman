@@ -1,78 +1,97 @@
+footer {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background-color: #222;
+  color: #999;
+}
+
+footer .footer {
+  position: relative;
+  width: 100%;
+  padding: 20px 32px;
+}
+
+/* Navigation menu styling */
 footer .footer .default-content-wrapper ul {
   display: flex;
-  flex-direction: column;
-  gap: 40%;
-  justify-content: flex-start;
-}
-
-footer .footer p {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: dimgray;
-}
-
-footer .footer p a {
-  padding: 0 1.7%;
-  color: dimgray;
-  padding-left: 50px; /* Adjust padding to align with the background image */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
 }
 
 footer .footer .default-content-wrapper > ul li {
-  position: relative; /* Ensures ::before is positioned relative to each <li> */
-  padding-left: 50px; /* Add space for the background image */
-  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
-footer .footer .back-to-top-link {
-  display: inline-block;
-  position: relative;
-  top: -22px;
-  width: 200px; /* Adjust size as needed */
+footer .footer .default-content-wrapper > ul li a {
+  color: var(--acs-copilot-primary-text-color);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer .footer .default-content-wrapper > ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer bottom with copyright and back to top */
+footer .footer p,
+footer .footer .footer-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 16px 32px;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: small;
+  color: #999;
+}
+
+/* Copyright text */
+footer .footer .copyright {
+  color: #999;
+  margin-right: 16px;
+}
+
+/* Back to top link */
+footer .footer .back-to-top {
+  display: flex;
+  align-items: center;
+  color: #999;
+  text-decoration: none;
+  font-size: small;
+  transition: color 0.3s ease;
+}
+
+footer .footer .back-to-top:hover {
+  color: var(--acs-copilot-primary-text-color);
+  text-decoration: underline;
+}
+
+/* Back to top icon */
+footer .footer .back-to-top-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
   height: 20px;
-  background-image: url('../../icons/up-arrow-dark-theme.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  left: 320px;
+  margin-right: 6px;
+  margin-left: 10px;
+  background-color: var(--acs-body-background);
+  color: var(--acs-copilot-primary-text-color);
+  font-size: 14px;
+  border-radius: 20px;
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 20px 32px 24px;
-    background: var(--acs-header-background);
-  }
-
-  footer .footer ul {
-    font-size: 1.8rem;
-  }
-  
   footer .footer .default-content-wrapper > ul {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-    margin-bottom: 0;
-  }
-
-  footer .footer .default-content-wrapper > ul li {
-    padding: 0 0 2%;
-    margin: 0;
-    border-bottom: 2px solid var(--text-color);
-  }
-
-  footer .footer p {
-    display: block;
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  footer .footer .back-to-top-link {
-    width: 24px;
-    height: 24px;
-    top: 20px;
-    left: auto;
+    gap: 60px;
   }
 }
