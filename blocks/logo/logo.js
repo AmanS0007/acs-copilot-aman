@@ -48,7 +48,7 @@ export default function decorate(block) {
       .reduce((acc, card) => acc + card.offsetWidth, 0);
 
     let scrollAmount = 0;
-    const speed = 0.5; 
+    const speed = 0.5;
     function frame() {
       scrollAmount += speed;
       if (scrollAmount >= singleSetWidth * 2) {
@@ -66,7 +66,7 @@ export default function decorate(block) {
       if (entry.isIntersecting) {
         slideLogos();
         obs.disconnect();
-        }
+      }
     });
   }, { threshold: 0.1 });
 

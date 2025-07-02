@@ -96,10 +96,10 @@ export default async function decorate(block) {
   block.replaceChildren(form);
 
   // Replace input#form-message[type="textarea"] with textarea immediately after form is rendered
-  setTimeout(function () {
-    var input = form.querySelector('input#form-message[type="textarea"]');
+  setTimeout(() => {
+    const input = form.querySelector('input#form-message[type="textarea"]');
     if (input) {
-      var textarea = document.createElement('textarea');
+      const textarea = document.createElement('textarea');
       textarea.id = input.id;
       textarea.name = input.name;
       textarea.placeholder = input.placeholder;

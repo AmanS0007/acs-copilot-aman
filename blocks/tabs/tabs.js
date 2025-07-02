@@ -48,9 +48,7 @@ export default async function decorate(block) {
       video.addEventListener('ended', () => video.classList.remove('video-start-animation'));
       tabContent.appendChild(video);
     }
-    
     // CTA link creation removed as requested
-    
     // Tab interaction
     tabButton.addEventListener('click', () => {
       // Update active state
