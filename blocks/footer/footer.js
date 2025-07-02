@@ -24,23 +24,21 @@ export default async function decorate(block) {
   const backToTopElement = document.createElement('a');
   backToTopElement.className = 'back-to-top';
   backToTopElement.href = '#';
-  backToTopElement.innerHTML = `<span class="back-to-top-icon">↑</span>`;
-  
+  backToTopElement.innerHTML = "<span class='back-to-top-icon'>↑</span>";
+
   let copyrightPara = footer.querySelector('p');
   if (!copyrightPara) {
     copyrightPara = document.createElement('div');
     copyrightPara.className = 'footer-bottom';
-    copyrightPara.innerHTML = '<span class="copyright">Copyright © Adobe - Powered by Adobe.</span>';
+    copyrightPara.innerHTML = "<span class='copyright'>Copyright © Adobe - Powered by Adobe.</span>";
     footer.appendChild(copyrightPara);
   }
-  
   copyrightPara.appendChild(backToTopElement);
-  
   backToTopElement.addEventListener('click', (event) => {
     event.preventDefault();
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   });
 
