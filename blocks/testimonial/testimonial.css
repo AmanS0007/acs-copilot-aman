@@ -41,11 +41,12 @@
 
 /* Quote content at the top */
 .testimonial-content {
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .testimonial-content p.quote {
-  line-height: 1.5;
+  line-height: 1.2;
   color: var(--acs-copilot-primary-text-color);
   white-space: normal;
   overflow: visible;
@@ -54,6 +55,8 @@
   font-style: italic;
   position: relative;
   padding-left: 15px;
+  margin: 0;
+  display: inline;
 }
 
 .testimonial-content p.quote::before {
@@ -67,13 +70,14 @@
 .testimonial-content p.quote::after {
   content: '"';
   font-size: 24px;
+  display: inline;
 }
 
 /* Author info at the bottom right */
 .testimonial-author {
   display: flex;
   justify-content: flex-end;
-  margin-top: auto;
+  margin-top: 15px;
 }
 
 .author-info {
