@@ -35,7 +35,29 @@
     padding: var(--acs-hero-center-padding);
     border-radius: var(--acs-hero-border-radius);
     width: var(--acs-hero-center-width);
+    margin-top: 100px;
+    z-index: 1;
 }
+
+/* Glowing effect for centre hero */
+.product-hero.centre::before {
+    content: "";
+    position: absolute;
+    inset: var(--acs-hero-glow-inset);
+    z-index: -1;
+    pointer-events: none;
+  
+    background:
+      radial-gradient(ellipse at var(--acs-hero-pos-purple), var(--acs-hero-glow-purple) 0%, transparent 55%),
+      radial-gradient(ellipse at var(--acs-hero-pos-pink), var(--acs-hero-glow-pink) 0%, transparent 50%),
+      radial-gradient(ellipse at var(--acs-hero-pos-yellow), var(--acs-hero-glow-yellow) 0%, transparent 70%),
+      radial-gradient(ellipse at var(--acs-hero-pos-lavender), var(--acs-hero-glow-lavender) 0%, transparent 60%),
+      radial-gradient(ellipse at var(--acs-hero-pos-orange), var(--acs-hero-glow-orange) 0%, transparent 45%);
+  
+    filter: blur(var(--acs-hero-glow-blur));
+    opacity: var(--acs-hero-glow-opacity);
+}
+
 
 .product-hero.centre > div {
     background: transparent;
@@ -115,4 +137,3 @@
     filter: blur(var(--acs-hero-glow-blur));
     opacity: var(--acs-hero-glow-opacity);
   }
-  

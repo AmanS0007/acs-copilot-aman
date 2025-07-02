@@ -55,7 +55,7 @@
   --acs-copilot-font-weight-h-p: 400;
   --acs-copilot-line-height-h-p: 1.7;
 
-  --acs-header-background: #0D1327;
+  --acs-header-background: #202020;
   --acs-body-background: #000;
   /* Link Colors */
   --acs-copilot-link-color: var(--acs-copilot-body-text-color);
