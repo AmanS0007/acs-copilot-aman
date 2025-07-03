@@ -21,7 +21,7 @@ footer .footer .default-content-wrapper ul {
   gap: 40px;
   list-style: none;
   padding: 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 40px;
 }
 
 footer .footer .default-content-wrapper > ul li {
@@ -69,14 +69,23 @@ footer .footer .back-to-top {
   display: flex;
   align-items: center;
   color: #999;
-  /* text-decoration: none; */
+  text-decoration: none;
   font-size: small;
-  transition: color 0.3s ease;
+
+  /* Removed transition to prevent any hover effect */
+  transition: none;
+  pointer-events: auto; /* Ensure it's still clickable */
 }
 
-footer .footer .back-to-top:hover {
-  color: var(--acs-copilot-primary-text-color);
-  text-decoration: underline;
+/* Completely disable hover effect */
+footer .footer .back-to-top:hover,
+footer .footer .back-to-top:focus,
+footer .footer .back-to-top:active {
+  color: #999 ;
+  text-decoration: none ;
+  border: none ;
+  background: transparent;
+  outline: none;
 }
 
 /* Back to top icon */

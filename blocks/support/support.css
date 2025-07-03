@@ -25,7 +25,7 @@
 .section.support-container h1 {
     color: var(--acs-copilot-primary-text-color);
     font-size: var(--acs-copilot-font-size-h1);
-    font-weight: var( --acs-copilot--font-weight-h1);
+    font-weight: var( --acs-copilot-font-weight-h1);
     margin-bottom: var(--acs-copilot-blockquote-paragraph-margin-bottom);
     margin-top: var(--acs-copilot-h1-margin-top);
     text-align: center;
@@ -79,18 +79,11 @@
 
 
 }
-
-.section.support-container input:focus,
-.section.support-container textarea:focus,
-.section.support-container select:focus {
-    box-shadow: var(--box-shadow-1);
-}
-
    
 .section.support-container button {
     background: var(--acs-copilot-form-button-background);
     color: var(--acs-copilot-body-text-color);
-    padding: var(--acs-copilot-button-padding);
+    padding: var(--acs-copilot-button-padding-support);
     border: none;
     border-radius: var(--acs-copilot-input-border-radius);
     font-size: var(--acs-copilot-list-font-size);
@@ -119,4 +112,10 @@
     background-repeat: var(--acs-copilot-arrow-background-repeat);
     background-position: var(--acs-copilot-arrow-background-position);
     cursor: var(--acs-copilot-form-cursor);
+}
+
+.section.support-container input:focus,
+.section.support-container textarea:focus,
+.section.support-container select:focus {
+    box-shadow: var(--box-shadow-1);
 }

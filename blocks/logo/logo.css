@@ -3,22 +3,21 @@
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
+  background-color: #000; 
+
 }
+
 .logo h2 {
   position: relative;
   margin-bottom: 40px;
   font-size: 1.5rem;
 }
-.logo {
-  position: relative;
-  padding: 20px 0;
-  overflow: hidden;
-}
+
 
 .logo .logo-slideshow {
   display: flex;
   align-items: center;
-  animation: slide-left 15s linear infinite;
+  animation: slide-left 20s linear infinite;
 }
 
 .logo .logo-card {
@@ -54,21 +53,18 @@
   background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-.logo {
-  background-color: #000; 
-}
-
 /* Animation */
 @keyframes slide-left {
   0% {
     transform: translateX(0);
   }
+  
   100% {
     transform: translateX(-50%);
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .logo .logo-card img {
     width: 60px;
     height: 60px;

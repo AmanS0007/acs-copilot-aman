@@ -96,15 +96,12 @@
 .centre.video {
   text-align: center;
   margin: var(--acs-video-margin); /* center the block */
+  position: relative;
+  z-index: 1;
 }
 
 .centre.video > div {
   justify-content: center;
-}
-
-.centre.video {
-  position: relative;
-  z-index: 1;
 }
 
 .centre.video::before {
@@ -113,15 +110,13 @@
   inset: var(--acs-video-glow-inset);
   z-index: -1;
   pointer-events: none;
-
-  background:
-    radial-gradient(ellipse at var(--acs-video-pos-purple), var(--acs-hero-glow-purple) 0%, transparent 55%),
+background:
+  radial-gradient(ellipse at var(--acs-video-pos-purple), var(--acs-hero-glow-purple) 0%, transparent 55%),
     radial-gradient(ellipse at var(--acs-video-pos-pink), var(--acs-hero-glow-pink) 0%, transparent 50%),
     radial-gradient(ellipse at var(--acs-video-pos-yellow), var(--acs-hero-glow-yellow) 0%, transparent 50%),
     radial-gradient(ellipse at var(--acs-video-pos-lavender), var(--acs-hero-glow-lavender) 0%, transparent 60%),
     radial-gradient(ellipse at var(--acs-video-pos-orange), var(--acs-hero-glow-orange) 0%, transparent 45%);
-
-  filter: blur(var(--acs-video-glow-blur));
+filter: blur(var(--acs-video-glow-blur));
   opacity: var(--acs-video-glow-opacity);
 }
 

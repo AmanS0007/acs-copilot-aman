@@ -184,8 +184,7 @@ header nav .nav-sections ul > li > ul > li a {
 }
 
 @media (width >= 900px) {
-
-  header nav .nav-brand > .default-content-wrapper > p > a:hover {
+header nav .nav-brand > .default-content-wrapper > p > a:hover {
     border: none;
   }
 

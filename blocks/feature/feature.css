@@ -119,11 +119,6 @@ media position for even-numbered feature sections */
   padding: var(--acs-feature-content-padding);
 }
 
-.feature .content-container {
-  flex: 1;
-  padding: var(--acs-feature-content-padding);
-}
-
 
 .content-container {
   position: relative;
@@ -136,14 +131,17 @@ media position for even-numbered feature sections */
   inset: var(--acs-content-glow-inset);
   z-index: -1;
   pointer-events: none;
-
   background:
     radial-gradient(ellipse at var(--acs-content-pos-purple), var(--acs-hero-glow-purple) 0%, transparent 55%),
     radial-gradient(ellipse at var(--acs-content-pos-pink), var(--acs-hero-glow-pink) 0%, transparent 50%),
     radial-gradient(ellipse at var(--acs-content-pos-yellow), var(--acs-hero-glow-yellow) 0%, transparent 50%),
     radial-gradient(ellipse at var(--acs-content-pos-lavender), var(--acs-hero-glow-lavender) 0%, transparent 60%),
     radial-gradient(ellipse at var(--acs-content-pos-orange), var(--acs-hero-glow-orange) 0%, transparent 45%);
-
   filter: blur(var(--acs-content-glow-blur));
   opacity: var(--acs-content-glow-opacity);
+}
+
+.feature .content-container {
+  flex: 1;
+  padding: var(--acs-feature-content-padding);
 }
