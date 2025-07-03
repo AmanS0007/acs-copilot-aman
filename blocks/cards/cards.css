@@ -43,7 +43,7 @@
 .cards-card .card-image {
   width: var(--acs-corosal-card-image-width);
   height: var(--acs-corosal-card-image-height);
-  border-radius: var(--acs-corosal-card-);
+  border-radius: var(--acs-corosal-card);
   box-shadow: var(--box-shadow-neon);
   transition: box-shadow 0.3s ease;
 }
