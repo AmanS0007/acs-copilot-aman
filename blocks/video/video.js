@@ -50,27 +50,11 @@ function embedVimeo(url, autoplay, background) {
     </div>`;
 }
 
-function getVideoMimeType(extension) {
-  const mimeTypes = {
-    'mp4': 'video/mp4',
-    'webm': 'video/webm',
-    'ogg': 'video/ogg',
-    'mov': 'video/quicktime',
-    'avi': 'video/x-msvideo',
-    'wmv': 'video/x-ms-wmv',
-    'flv': 'video/x-flv',
-    'mkv': 'video/x-matroska',
-    '3gp': 'video/3gpp'
-  };
-  return mimeTypes[extension.toLowerCase()] || `video/${extension}`;
-}
-
 // Function to create and configure a video element for self-hosted videos
 function getVideoElement(source, autoplay, background) {
   const video = document.createElement('video');
   video.src = source;
-  const extension = source.split('.').pop();
-  video.type = getVideoMimeType(extension);
+  video.type = `video/${source.split('.').pop()}`;
   video.controls = !background;
   video.title = getFileName(new URL(source));
   if (autoplay) video.autoplay = true;
