@@ -1,4 +1,11 @@
 export default function decorate(block) {
+  // Add centering styles to the block
+  block.style.display = 'flex';
+  block.style.flexDirection = 'column';
+  block.style.alignItems = 'center';
+  block.style.width = '100%';
+  block.style.margin = '0 auto';
+  
   // Extract testimonials data from the block
   const testimonialsData = [...block.children].map((row) => {
     // Extract title
@@ -32,8 +39,17 @@ export default function decorate(block) {
       </div>
     `).join('');
 
+  // Create a container div for better centering
+  const containerDiv = document.createElement('div');
+  containerDiv.className = 'testimonial-container';
+  containerDiv.style.width = '100%';
+  containerDiv.style.maxWidth = '1200px';
+  containerDiv.style.margin = '0 auto';
+  containerDiv.style.display = 'flex';
+  containerDiv.style.justifyContent = 'center';
+  
   // Update block content - combine all testimonials into a single row
-  block.innerHTML = `
+  containerDiv.innerHTML = `
     <div class="testimonial-wrapper">
       <div class="testimonial-scroll">
         <div class="testimonial-content-wrapper">
@@ -43,6 +59,10 @@ export default function decorate(block) {
       </div>
     </div>
   `;
+  
+  // Clear the block and append the container
+  block.innerHTML = '';
+  block.appendChild(containerDiv);
 
   // Functionality to pause and play the testimonial rows
   const testimonialWrapper = document.querySelector('.testimonial-wrapper');

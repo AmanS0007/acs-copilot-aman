@@ -3,6 +3,12 @@
   /* background: linear-gradient(135deg, #380a6b 30%, #4a0a46 70%); */
   padding: 30px 15px;
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 /* Scroll Wrapper */
@@ -10,6 +16,9 @@
   overflow: hidden;
   position: relative;
   padding: 15px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Scroll Container */
@@ -24,8 +33,8 @@
   padding: 20px;
   margin: 12px;
   border-radius: 10px;
-  min-width: 400px;
-  max-width: 500px;
+  min-width: 700px;
+  max-width: 800px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -108,7 +117,7 @@
 /* Scroll Animation Containers */
 .testimonial-scroll .testimonial-content-wrapper {
   display: flex;
-  animation: scroll-left 50s linear infinite;
+  animation: scroll-left 200s linear infinite;
 }
 
 
