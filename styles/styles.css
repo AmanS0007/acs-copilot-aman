@@ -221,11 +221,11 @@
 --acs-hero-padding: 50px;
 --acs-hero-border-radius: 15px;
 --acs-hero-gap: 20px;
---acs-hero-center-padding: 100px 20px;
+--acs-hero-center-padding: 150px 20px;
 --acs-hero-center-width: 100%;
 --acs-hero-center-height: 100%;
---acs-hero-center-max-width: 800px;
---acs-hero-center-max-height: 800px;
+--acs-hero-center-max-width: 1200px;
+--acs-hero-center-max-height: 1000px;
 --acs-summary-margin-bottom: 20px;
 --acs-summary-h2-font-size: 88px;
 --acs-summary-h2-line-height: 1.2;
@@ -486,9 +486,14 @@
     border-bottom: 1px solid var(--non-spectrurm-whisper-gray);
   }
 
-  main {
-    margin: 0 120px;
-  }
+main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
   dl,
   pre {
