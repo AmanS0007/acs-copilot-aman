@@ -34,10 +34,8 @@
     text-align: center;
     padding: var(--acs-hero-center-padding);
     border-radius: var(--acs-hero-border-radius);
-    width: 90vw;
-    max-width: 1200px;
-    min-width: 320px;
-    margin: 100px auto 0;
+    min-width: var(--acs-hero-center-width);
+    margin-top: 100px;
     z-index: 1;
 }
 
@@ -73,8 +71,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    max-width: 1200px
+    width: var(--acs-hero-center-width);
+    height: var(--acs-hero-center-height);
+    min-width: var(--acs-hero-center-width);
 }
 
 /* Box around image */
