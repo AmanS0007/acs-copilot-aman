@@ -2,7 +2,7 @@
 function createVideoElement(videoSrc) {
   const videoElement = document.createElement('video');
   videoElement.src = videoSrc;
-  videoElement.controls = true;
+  videoElement.controls = false;
   videoElement.muted = true;
   videoElement.autoplay = true;
   videoElement.loop = true;

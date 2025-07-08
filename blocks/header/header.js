@@ -115,6 +115,17 @@ function wrapImgsInLinks(container) {
     }
   });
 }
+function increaseNavFontSize(nav) {
+  const navItems = nav.querySelectorAll('.nav-sections .default-content-wrapper > ul > li > a');
+  navItems.forEach((link) => {
+    link.style.fontSize = '24px';
+    link.style.fontWeight = 'none';
+  });
+  const dropdownItems = nav.querySelectorAll('.nav-sections .default-content-wrapper > ul > li > ul > li > a');
+  dropdownItems.forEach((link) => {
+    link.style.fontSize = '22px';
+  });
+}
 
 /**
  * loads and decorates the header, mainly the nav
@@ -132,10 +143,20 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   nav.append(...fragment.children);
+  setTimeout(() => increaseNavFontSize(nav), 100);
 
   ['brand', 'tools', 'sections'].forEach((c, i) => {
     const section = nav.children[i];
-    if (section) section.classList.add(`nav-${c}`);
+    if (section) {
+      section.classList.add(`nav-${c}`);
+      // Hide search component in the tools section
+      if (c === 'tools') {
+        const searchComponent = section.querySelector('.search');
+        if (searchComponent) {
+          searchComponent.style.display = 'none';
+        }
+      }
+    }
   });
 
   const navBrand = nav.querySelector('.nav-brand .default-content-wrapper > p > a');
@@ -148,9 +169,17 @@ export default async function decorate(block) {
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
         navSection.addEventListener('mouseenter', () => {
           if (isDesktop.matches) {
-            const expanded = navSection.getAttribute('aria-expanded') === 'true';
-            toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', !expanded);
+            toggleAllNavSections(navSections, false);
+            if (navSection.classList.contains('nav-drop')) {
+              navSection.setAttribute('aria-expanded', 'true');
+            }
+          }
+        });
+        navSection.addEventListener('mouseleave', () => {
+          if (isDesktop.matches) {
+            if (navSection.getAttribute('aria-expanded') === 'true') {
+              navSection.setAttribute('aria-expanded', 'false');
+            }
           }
         });
       });

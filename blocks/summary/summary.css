@@ -10,7 +10,7 @@
   margin: 0;
   background: var(--gradient-color);
   background-clip: text;
-  font-size: var(--acs-summary-h2-font-size);
+  font-size: 60px;
   line-height: var(--acs-summary-h2-line-height);
 }
 

@@ -8,7 +8,7 @@
 }
 
 .product-hero h1 {
-    font-size: var(--acs-copilot-font-size-h1);
+    font-size: 80px;
     background: var(--gradient-color);
     background-clip: text;
 }
@@ -37,7 +37,6 @@
     width: 90vw;
     max-width: 1200px;
     min-width: 320px;
-    margin: 100px auto 0;
     z-index: 1;
 }
 
@@ -110,7 +109,6 @@
 
 /* Hover effect */
 .product-hero picture:hover, .product-hero video:hover {
-    transform: scale(1.05);
     box-shadow: var(--box-shadow-neon-hover);
 }
 

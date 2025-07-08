@@ -34,6 +34,8 @@
   max-width: 1000px;
   flex-wrap: wrap;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 /* Tab button styles */
@@ -55,11 +57,21 @@
   text-align: center;
   justify-content: center;
   gap: var(--acs-tabs-gap);
+  opacity: 1; /* Ensure full opacity for the button */
+}
+
+/* Tab title styles */
+.tab-button .tab-title {
+  opacity: 1; 
+  font-weight: 600; 
+  color: white; 
+  text-shadow: 0 0 2px rgb(255 255 255 / 50%); 
+  justify-content: center;
 }
 
 .tabs-container .tab-button {
   background: none;
-  border: none;
+  border: white 1px solid;
   border-radius: var(--acs-tabs-border-radius);
 }
 
@@ -92,7 +104,7 @@
 }
 
 .tab-button:hover .tab-media {
-  filter: var(--acs-tabs-tab-media-filter);
+  filter: brightness(1) invert(1);
 }
 
 .tab-button:hover::before {
@@ -116,7 +128,7 @@
 }
 
 .tab-button.active-hover {
-  background-color: rgba(0 0 0) !important;
+  background-color: rgb(0 0 0) !important;
 }
 
 /* Glowing border animation */
@@ -170,7 +182,7 @@
   max-height: 600px;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0 0 0);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 100%);
   transition: all 0.3s ease-in-out;
   border: 2px solid transparent;
   position: relative;
