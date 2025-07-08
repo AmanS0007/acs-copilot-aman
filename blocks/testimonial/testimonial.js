@@ -1,40 +1,80 @@
 export default function decorate(block) {
-  // Add centering styles to the block
+  // Style the block wrapper
   block.style.display = 'flex';
   block.style.flexDirection = 'column';
   block.style.alignItems = 'center';
   block.style.width = '100%';
   block.style.margin = '0 auto';
-  // Extract testimonials data from the block
+
+  // Extract data from each row's 2nd column
   const testimonialsData = [...block.children].map((row) => {
-    // Extract title
-    const titleElement = row.querySelector(':scope > div:nth-child(2)').firstElementChild;
-    const testimonialTitle = titleElement ? titleElement.textContent.trim() : '';
-    // Extract paragraphs
-    const paragraphs = row.querySelectorAll('p');
-    const testimonialText = paragraphs.length > 1 ? paragraphs[1].textContent.trim() : '';
+    const col2 = row.querySelector(':scope > div:nth-child(2)');
+    if (!col2) return null;
+
+    // Try to extract author and designation from various elements
+    const headings = col2.querySelectorAll('h1, h2, h3, h4, h5, strong, b');
+    const paragraphs = [...col2.querySelectorAll('p')];
+
+    // First try to get author from headings
+    const testimonialAuthor = headings[0]?.textContent.trim() || '';
+
+    // Try multiple approaches to find designation
+    let testimonialDesignation = '';
+
+    // Approach 1: Check if there's a second heading
+    if (headings.length > 1) {
+      testimonialDesignation = headings[1]?.textContent.trim() || '';
+    }
+
+    // Approach 2: If no designation found, look for a paragraph that might contain it
+    if (!testimonialDesignation && paragraphs.length > 1) {
+      // Check if any paragraph contains common designation indicators
+      const match = paragraphs.find((p) => {
+        const text = p.textContent.trim();
+        return text !== testimonialAuthor
+         && (text.includes('at ')
+        || text.includes('from ')
+        || text.includes(',')
+        || text.length < 50);
+      });
+
+      if (match) {
+        testimonialDesignation = match.textContent.trim();
+      }
+    }
+    const smallText = col2.querySelector('small, em, i');
+    if (!testimonialDesignation && smallText) {
+      testimonialDesignation = smallText.textContent.trim();
+    }
+    const testimonialParagraphs = paragraphs.filter((p) => {
+      const text = p.textContent.trim();
+      return (
+        text !== testimonialAuthor
+    && text !== testimonialDesignation
+    && text.length > 50
+      );
+    });
+
+    const testimonialText = testimonialParagraphs.map((p) => p.innerHTML.trim()).join(' ');
     return {
-      testimonialTitle,
-      // testimonialLink, // Now properly formatted as an `<a>` tag
+      testimonialAuthor,
+      testimonialDesignation,
       testimonialText,
     };
-  });
-  // Generate HTML structure for testimonials
-  const createTestimonialHTML = (items) => items
-    .map((test) => `
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <p class="quote">${test.testimonialText}</p>
-        </div>
+  }).filter(Boolean);
+  const createTestimonialHTML = (items) => items.map((test) => `
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        <p class="quote">${test.testimonialText.replace(/&quot;/g, '')}</p>
         <div class="testimonial-author">
           <div class="author-info">
-            <h5>${test.testimonialTitle}</h5>
-            ${test.testimonialLink ? `<p>${test.testimonialLink}</p>` : ''}
+            <p class="author-name">${test.testimonialAuthor}</p>
+            <p class="author-role">${test.testimonialDesignation}</p>
           </div>
         </div>
       </div>
-    `).join('');
-  // Create a container div for better centering
+    </div>
+  `).join('');
   const containerDiv = document.createElement('div');
   containerDiv.className = 'testimonial-container';
   containerDiv.style.width = '100%';
@@ -42,30 +82,29 @@ export default function decorate(block) {
   containerDiv.style.margin = '0 auto';
   containerDiv.style.display = 'flex';
   containerDiv.style.justifyContent = 'center';
-  // Update block content - combine all testimonials into a single row
+
   containerDiv.innerHTML = `
     <div class="testimonial-wrapper">
       <div class="testimonial-scroll">
         <div class="testimonial-content-wrapper">
           ${createTestimonialHTML(testimonialsData)}
-          ${createTestimonialHTML(testimonialsData)} <!-- Duplicate for smooth loop -->
+          ${createTestimonialHTML(testimonialsData)}
         </div>
       </div>
     </div>
   `;
-  // Clear the block and append the container
   block.innerHTML = '';
   block.appendChild(containerDiv);
-  // Functionality to pause and play the testimonial rows
+
   const testimonialWrapper = document.querySelector('.testimonial-wrapper');
   testimonialWrapper.addEventListener('mouseenter', () => {
-    document.querySelectorAll('.testimonial-content-wrapper').forEach((card) => {
-      card.style.animationPlayState = 'paused';
+    document.querySelectorAll('.testimonial-content-wrapper').forEach((el) => {
+      el.style.animationPlayState = 'paused';
     });
   });
   testimonialWrapper.addEventListener('mouseleave', () => {
-    document.querySelectorAll('.testimonial-content-wrapper').forEach((card) => {
-      card.style.animationPlayState = 'running';
+    document.querySelectorAll('.testimonial-content-wrapper').forEach((el) => {
+      el.style.animationPlayState = 'running';
     });
   });
 }

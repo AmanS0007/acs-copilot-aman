@@ -8,7 +8,7 @@
 }
 
 .product-hero h1 {
-    font-size: var(--acs-copilot-font-size-h1);
+    font-size: 80px;
     background: var(--gradient-color);
     background-clip: text;
 }
@@ -34,8 +34,9 @@
     text-align: center;
     padding: var(--acs-hero-center-padding);
     border-radius: var(--acs-hero-border-radius);
-    min-width: var(--acs-hero-center-width);
-    margin-top: 100px;
+    width: 90vw;
+    max-width: 1200px;
+    min-width: 320px;
     z-index: 1;
 }
 
@@ -71,9 +72,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: var(--acs-hero-center-width);
-    height: var(--acs-hero-center-height);
-    min-width: var(--acs-hero-center-width);
+    width: 100%;
+    max-width: 1200px
 }
 
 /* Box around image */
@@ -109,7 +109,6 @@
 
 /* Hover effect */
 .product-hero picture:hover, .product-hero video:hover {
-    transform: scale(1.05);
     box-shadow: var(--box-shadow-neon-hover);
 }
 
