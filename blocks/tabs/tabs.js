@@ -35,7 +35,7 @@ export default async function decorate(block) {
     if (videoLink) {
       const video = document.createElement('video');
       video.src = videoLink.href;
-      video.controls = true;
+      video.controls = false;
       video.loop = true;
       video.className = 'tab-video';
       video.muted = true;

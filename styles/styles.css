@@ -26,7 +26,7 @@
   --acs-copilot-body-padding: 0;
 
   /* Header Tags */
-  --acs-copilot-font-size-h1: 64px;
+  --acs-copilot-font-size-h1: 60px;
   --acs-copilot-font-weight-h1: 800;
   --acs-copilot-line-height-h1: 1.2;
   --acs-copilot-font-size-h2: 48px;
@@ -47,7 +47,7 @@
   --acs-copilot-font-size-p: 18px;
   --acs-copilot-font-weight-p: 400;
   --acs-copilot-line-height-p: 1.6;
-  --acs-copilot-font-size-h-p: 20px;
+  --acs-copilot-font-size-h-p: 24px;
   --acs-copilot-font-weight-h-p: 400;
   --acs-copilot-line-height-h-p: 1.7;
   --acs-header-background: #202020;

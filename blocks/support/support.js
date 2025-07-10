@@ -55,7 +55,7 @@ async function handleSubmit(form) {
       body: JSON.stringify({ data: generatePayload(form) }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    
     if (!response.ok) throw new Error(await response.text());
 
     if (form.dataset.confirmation) window.location.href = form.dataset.confirmation;

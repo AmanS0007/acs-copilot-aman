@@ -28,7 +28,7 @@
 
 /* Testimonial Card */
 .testimonial-card {
-  background-color: var(--dark-color, #1a1a1a);
+  background-color: #212121;
   padding: 20px;
   margin: 12px;
   border-radius: 10px;
@@ -40,7 +40,7 @@
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  height: 180px;
+  height: 150px;
 }
 
 .testimonial-card:hover {

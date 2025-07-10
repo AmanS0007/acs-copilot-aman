@@ -30,7 +30,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     padding: var(--acs-hero-center-padding);
     border-radius: var(--acs-hero-border-radius);
@@ -102,7 +102,7 @@
 /* Content Box - Ensures Text is Visible Over the Background */
 .product-hero.centre > div > div:last-of-type {
     z-index: 1;
-    text-align: center;
+    text-align: left;
     max-width: var(--acs-hero-center-max-width);
     padding: var( --acs-corosal-card-padding);
 }
