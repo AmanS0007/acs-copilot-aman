@@ -1,11 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
   top: 0;
-  background-color: var(--acs-copilot-body-bg-color);
   width: 100%;
   z-index: 1000;
   position: fixed;
-  color: var(--acs-copilot-body-text-color);
+  background:var(--acs-header-background);
 }
 
 header nav {
@@ -21,6 +20,7 @@ header nav {
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
+  
 }
 
 header nav[aria-expanded='true'] {
@@ -39,6 +39,7 @@ header nav[aria-expanded='true'] {
     gap: 0 32px;
     max-width: 1264px;
     padding: 0 32px;
+    
   }
 
   header nav[aria-expanded='true'] {
@@ -166,7 +167,6 @@ header nav[aria-expanded='true'] .nav-sections {
 
 header nav .nav-sections ul {
   padding-left: 0;
-  font-size: 1.8rem;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -179,12 +179,11 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 header nav .nav-sections ul > li > ul > li a {
-  color: var(--dark-color);
+  color: var(--acs-copilot-body-text-color);
 }
 
 @media (width >= 900px) {
-
-  header nav .nav-brand > .default-content-wrapper > p > a:hover {
+header nav .nav-brand > .default-content-wrapper > p > a:hover {
     border: none;
   }
 
@@ -239,9 +238,12 @@ header nav .nav-sections ul > li > ul > li a {
     display: block;
     list-style: none;
     opacity: 1;
-    width: 100%;
-    padding: 0 10px;
-    background-color: var(--light-color);
+    width: 200px; /* Fixed width for dropdown */
+    padding: 10px;
+    background-color: rgb(0 0 0 / 80%); /* Dark background with transparency */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+    z-index: 1001;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='false'] > ul {
@@ -257,11 +259,16 @@ header nav .nav-sections ul > li > ul > li a {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid rgb(0 0 0 / 80%); /* Match dropdown background color */
   }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* Hide search in nav tools */
+header nav .nav-tools .search {
+  display: none;
 }

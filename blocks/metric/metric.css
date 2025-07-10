@@ -8,6 +8,12 @@
   text-align: center;
 }
 
+.metric > div > div > h1 {
+  font-size: 60px;
+  margin: 0;
+  background: var(--gradient-color);
+  background-clip: text;
+}
 
 @media (width >= 900px) {
   .metric > div {

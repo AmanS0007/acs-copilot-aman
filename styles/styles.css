@@ -10,12 +10,15 @@
 
   /* Body Typography */
   --acs-copilot-body-font-size: 18px;
+  
   /* Standard readable size */
   --acs-copilot-body-line-height: 1.6;
+  
   /* Proper spacing */
   --acs-copilot-body-font-weight: 400;
+  
   /* Regular weight */
-  --acs-copilot-body-text-color: white;
+  --acs-copilot-body-text-color: #fff;
   --acs-copilot-body-bg-color: #000e22;
 
   /* Body Spacing */
@@ -24,58 +27,60 @@
 
   /* Header Tags */
   --acs-copilot-font-size-h1: 64px;
-  --acs-copilot--font-weight-h1: 800;
+  --acs-copilot-font-weight-h1: 800;
   --acs-copilot-line-height-h1: 1.2;
-
   --acs-copilot-font-size-h2: 48px;
-  --acs-copilot--font-weight-h2: 700;
+  --acs-copilot-font-weight-h2: 700;
   --acs-copilot-line-height-h2: 1.3;
-
   --acs-copilot-font-size-h3: 40px;
   --acs-copilot-font-weight-h3: 700;
   --acs-copilot-line-height-h3: 1.4;
-
   --acs-copilot-font-size-h4: 32px;
   --acs-copilot-font-weight-h4: 600;
   --acs-copilot-line-height-h4: 1.4;
-
   --acs-copilot-font-size-h5: 24px;
   --acs-copilot-font-weight-h5: 600;
   --acs-copilot-line-height-h5: 1.5;
-
   --acs-copilot-font-size-h6: 20px;
   --acs-copilot-font-weight-h6: 500;
   --acs-copilot-line-height-h6: 1.5;
-
   --acs-copilot-font-size-p: 18px;
   --acs-copilot-font-weight-p: 400;
   --acs-copilot-line-height-p: 1.6;
-
   --acs-copilot-font-size-h-p: 20px;
   --acs-copilot-font-weight-h-p: 400;
   --acs-copilot-line-height-h-p: 1.7;
-
+  --acs-header-background: #202020;
+  --acs-body-background: #000;
+  
   /* Link Colors */
   --acs-copilot-link-color: var(--acs-copilot-body-text-color);
   --acs-copilot-link-hover-color: #9A47E2;
-  /* Hover effect (Purple) */
+  
+
 
   /* Link Typography */
   --acs-copilot-link-font-size: 18px;
+
   /* Standard readable size */
   --acs-copilot-link-line-height: 1.6;
+
   /* Spacing for better readability */
   --acs-copilot-link-font-weight: 500;
+
   /* Medium weight for visibility */
 
   /* Link Text Decoration */
   --acs-copilot-link-text-decoration: none;
+
   /* No underline by default */
   --acs-copilot-link-hover-decoration: underline;
+
   /* Underline on hover */
 
   /* Link Transition */
   --acs-copilot-link-transition: 0.3s ease-in-out;
+
   /* Smooth effect */
 
   /* Box Shadows */
@@ -85,8 +90,9 @@
 
   /* Primary Button (Solid & Bold) */
   --acs-copilot-primary-bg-color: #EB1000;
+
   /* Adobe Red */
-  --acs-copilot-primary-text-color: #ffffff;
+  --acs-copilot-primary-text-color: #fff;
   --acs-copilot-primary-hover-bg-color: #9A47E2;
   --acs-copilot-primary-border-color: transparent;
 
@@ -114,6 +120,7 @@
   --acs-copilot-list-font-weight: 400;
   --acs-copilot-list-line-height: 27px;
   --acs-copilot-list-color: #b3b3b3;
+ 
   /* Adobe Grey */
   --acs-copilot-list-margin-top: 1em;
   --acs-copilot-list-margin-bottom: 1em;
@@ -121,14 +128,15 @@
   /* nav height */
   --nav-height: 64px;
 
-  /*Section Colors */
+  /* Section Colors */
   --highlight-light-background-color: #f8f8f8;
   --highlight-dark-background-color: #efefef;
 
-  /*Colors */
+  /* Colors */
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --gradient-color: linear-gradient(90deg, #F24CB8, #C844DC, #9A47E2, #7155FA);
+  --form-background-color: #000;
 
   /* Max-width values  */
   --default-max-width: 1280px;
@@ -145,11 +153,13 @@
 
   /* Primary Button in the button container */
   --acs-copilot-primary-button-bg: #0A66E2;
+  
   /* Adobe Blue */
   --acs-copilot-primary-button-border: 0;
 
   /* Secondary Button in the button container */
   --acs-copilot-secondary-button-text: #5A5A5A;
+  
   /* Adobe Grey */
   --acs-copilot-secondary-button-border: 1.67px solid #5A5A5A;
   --acs-copilot-secondary-button-padding-top: 5px;
@@ -169,15 +179,162 @@
   /* Block quote */
   --acs-copilot-blockquote-margin: 0;
   --acs-copilot-blockquote-text-color: #b3b3b3;
+  
   /* Adobe Grey */
   --acs-copilot-blockquote-quote-line-height: 0;
   --acs-copilot-blockquote-paragraph-margin-bottom: 8px;
+  
+  /* Forms Variables */
+  --acs-copilot-form-justify-content: flex-start;
+  --acs-copilot-form-height: auto;
+  --acs-copilot-form-flex-direction: column;
+  --acs-copilot-form-padding-bottom: 40px;
+  --acs-copilot-form-padding-top: 40px;
+  --acs-copilot-form-margin-top: 0;
+  --acs-copilot-form-gap-1: 24px;
+  --acs-copilot-form-input-filed-background:#18191a;
+  --acs-copilot-form-button-background: #ff0048e7;
+  --acs-copilot-form-contact-us-message-max-height: 150px;
+  --acs-copilot-form-cursor: pointer;
+  --acs-copilot-arrow-background-position: right 15px center;
+  --acs-copilot-default-arrow-appearance: none;
+  --acs-copilot-arrow-background-repeat: no-repeat;
+  --acs-copilot-button-padding-support:14px 0;
+  --acs-copilot-dropdown-arrow-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' viewBox='0 0 16 16' fill='%2338B2AC' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4' stroke='%2338B2AC' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  --acs-copilot-text-shadow: 1px 1px 8px #38B2AC;
+  --acs-copilot-h1-text-shadow: 0 0 2px #38B2AC,    0 0 5px #38B2AC,      0 0 15px #38B2AC,     0 0 30px #38B2AC;  
+
+  /* Cards Variables */
+  --acs-corosal-button-height: 90px;
+  --acs-corosal-button-width: 60px;
+  --acs-corosal-button-icon-height: 28px;
+  --acs-corosal-button-icon-width: 35px;
+  --acs-corosal-button-icon-padding-left: 5px;
+  --acs-corosal-button-icon-padding-right: 5px;
+  --acs-corosal-card-padding: 20px;
+  --acs-corosal-card-border-radius: 10px;
+  --acs-corosal-card-max-width: 300px;
+  --acs-corosal-card-image-height: 200px;
+  --acs-corosal-card-image-width: 300px;
+  
+/* Product Hero Variables */
+--acs-hero-padding: 50px;
+--acs-hero-border-radius: 15px;
+--acs-hero-gap: 20px;
+--acs-hero-center-padding: 150px 20px;
+--acs-hero-center-width: 100%;
+--acs-hero-center-height: 100%;
+--acs-hero-center-max-width: 1200px;
+--acs-hero-center-max-height: 1000px;
+--acs-summary-margin-bottom: 20px;
+--acs-summary-h2-font-size: 88px;
+--acs-summary-h2-line-height: 1.2;
+
+/* Feature Section Variables */
+--acs-feature-margin: 60px 50px 40px;
+--acs-feature-center-width: 100%;
+--acs-feature-center-height: 100%;
+--acs-feature-center-max-width: 800px;
+--acs-feature-center-max-height: 800px;
+--acs-feature-video-width: 100%;
+--acs-feature-video-height: auto;
+--acs-feature-video-border-radius: var(--acs-hero-border-radius);
+--acs-feature-video-box-shadow: var(--box-shadow-neon);
+--acs-feature-video-transition: transform 0.3s ease, box-shadow 0.3s ease;
+--acs-feature-video-cursor: pointer;
+--acs-feature-content-width: var(--acs-feature-center-width);
+--acs-feature-content-padding: var(--acs-corosal-card-padding);
+--acs-feature-content-text-align: left;
+--acs-feature-content-h2-font-size: 2.5em;
+--acs-feature-content-h2-margin-bottom: 15px;
+--acs-feature-content-h2-font-weight: bold;
+
+/* Video Section Variables */
+--acs-video-margin: 24px auto 24px 0;
+--acs-video-play-button-width: 44px;
+--acs-video-play-button-height: 44px;
+--acs-video-play-button-border-radius: 50%;
+--acs-video-play-button-border-top: 12px solid transparent;
+--acs-video-play-button-border-bottom: 12px solid transparent;
+--acs-video-play-button-border-left: 18px solid;
+--acs-video-play-button-border-left-offset: 2px;
+--acs-video-h1-margin: 20px;
+
+
+/* Tabs Section Variables */
+--acs-tabs-margin-top: 20px;
+--acs-tabs-padding-top: 20px;
+--acs-tabs-border-radius: 10px;
+--acs-tabs-font-size: 20px;
+--acs-tabs-min-width: 140px;
+--acs-tabs-gap: 10px;
+--acs-tabs-padding: 20px 40px;
+--acs-tabs-margin: 0 10px;
+--acs-tabs-tab-media-width: 24px;
+--acs-tabs-tab-media-height: 24px;
+--acs-tabs-tab-media-margin-right: 10px;
+--acs-tabs-tab-media-top: -2px;
+--acs-tabs-tab-media-left: -2px;
+--acs-tabs-tab-media-right: -2px;
+
+  /* Product Hero gardient variables */
+    --acs-hero-glow-purple: rgba(111, 44, 255, 0.65);
+    --acs-hero-glow-pink: rgba(255, 91, 140, 0.45);
+    --acs-hero-glow-yellow: rgba(255, 184, 108, 0.25);
+    --acs-hero-glow-lavender: rgba(168, 85, 247, 0.2);
+    --acs-hero-glow-orange: rgba(251, 191, 36, 0.12);
+
+  /* === Glow Positions === */
+    --acs-hero-pos-purple: 10% 25%;
+    --acs-hero-pos-pink: 8% 40%;
+    --acs-hero-pos-yellow: 5% 55%;
+    --acs-hero-pos-lavender: 12% 30%;
+    --acs-hero-pos-orange: 15% 15%;
+  
+  /* === Other Controls === */
+    --acs-hero-glow-inset: -100px -200px -100px -200px;
+    --acs-hero-glow-blur: 60px;
+    --acs-hero-glow-opacity: 0.5;
+
+  /* === Summary Section Glow Controls === */
+    --acs-summary-glow-inset: -80px -150px -80px -150px;
+    --acs-summary-pos-purple: 50% 20%;
+    --acs-summary-pos-pink: 50% 35%;
+    --acs-summary-pos-yellow: 50% 50%;
+    --acs-summary-pos-lavender: 50% 25%;
+    --acs-summary-pos-orange: 50% 70%;
+    --acs-summary-glow-blur: 60px;
+    --acs-summary-glow-opacity: 0.8;
+
+
+  /* === Content Section Glow Controls === */
+    --acs-content-glow-inset: -60px -100px -100px -80px;
+    --acs-content-pos-purple: 35% 30%;
+    --acs-content-pos-pink: 30% 60%;
+    --acs-content-pos-yellow: 25% 75%;
+    --acs-content-pos-lavender: 40% 50%;
+    --acs-content-pos-orange: 70% 85%;
+    --acs-content-glow-blur: 70px;
+    --acs-content-glow-opacity: 1;
+
+
+  /* === Video Section Glow Controls === */
+    --acs-video-glow-inset: -60px -120px -100px -100px;
+    --acs-video-pos-purple: 30% 40%;
+    --acs-video-pos-pink: 25% 65%;
+    --acs-video-pos-yellow: 20% 80%;
+    --acs-video-pos-lavender: 40% 50%;
+    --acs-video-pos-orange: 70% 85%;
+    --acs-video-glow-blur: 90px;
+    --acs-video-glow-opacity: 1.2;
+
+
 
   .h1,
   h1 {
     font-family: var(--body-font-family);
     font-size: var(--acs-copilot-font-size-h1);
-    font-weight: var(--acs-copilot--font-weight-h1);
+    font-weight: var(--acs-copilot-font-weight-h1);
     font-style: normal;
     line-height: var(--acs-copilot-line-height-h1);
     color: var(--acs-copilot-body-text-color);
@@ -189,7 +346,7 @@
   h2 {
     font-family: var(--body-font-family);
     font-size: var(--acs-copilot-font-size-h2);
-    font-weight: var(--acs-copilot--font-weight-h2);
+    font-weight: var(--acs-copilot-font-weight-h2);
     font-style: normal;
     line-height: var(--acs-copilot-line-height-h2);
     color: var(--acs-copilot-body-text-color);
@@ -201,7 +358,7 @@
   h3 {
     font-family: var(--body-font-family);
     font-size: var(--acs-copilot-font-size-h3);
-    font-weight: var(--acs-copilot--font-weight-h3);
+    font-weight: var(--acs-copilot-font-weight-h3);
     font-style: normal;
     line-height: var(--acs-copilot-line-height-h3);
     color: var(--acs-copilot-body-text-color);
@@ -213,7 +370,7 @@
   h4 {
     font-family: var(--acs-copilot-font-family);
     font-size: var(--acs-copilot-font-size-h4);
-    font-weight: var(--acs-copilot--font-weight-h4);
+    font-weight: var(--acs-copilot-font-weight-h4);
     font-style: normal;
     line-height: var(--acs-copilot-line-height-h4);
     color: var(--acs-copilot-body-text-color);
@@ -225,7 +382,7 @@
   h5 {
     font-family: var(--body-font-family);
     font-size: var(--acs-copilot-font-size-h5);
-    font-weight: var(--acs-copilot--font-weight-h5);
+    font-weight: var(--acs-copilot-font-weight-h5);
     font-style: normal;
     line-height: var(--acs-copilot-line-height-h5);
     color: var(--acs-copilot-body-text-color);
@@ -237,7 +394,7 @@
   h6 {
     font-family: var(--body-font-family);
     font-size: var(--acs-copilot-font-size-h6);
-    font-weight: var(--acs-copilot--font-weight-h6);
+    font-weight: var(--acs-copilot-font-weight-h6);
     font-style: normal;
     line-height: var(--acs-copilot-line-height-h6);
     color: var(--acs-copilot-body-text-color);
@@ -308,7 +465,7 @@
   }
 
   body {
-    background-color: var(--acs-copilot-body-bg-color);
+    background-color: var(--acs-body-background);
     font-size: var(--acs-copilot-body-font-size);
     font-family: var(--body-font-family);
     line-height: var(--acs-copilot-body-line-height);
@@ -317,6 +474,7 @@
     overflow-wrap: break-word;
     margin: var(--acs-copilot-body-margin);
     padding: var(--acs-copilot-body-padding);
+    overflow-x: hidden;
   }
 
   body.appear {
@@ -328,9 +486,14 @@
     border-bottom: 1px solid var(--non-spectrurm-whisper-gray);
   }
 
-  main {
-    margin: 0 120px;
-  }
+main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
   dl,
   pre {
@@ -441,7 +604,8 @@
     display: inline-block;
     box-sizing: border-box;
     text-decoration: none;
-    padding: 5px 30px;
+   
+    /* padding: 5px 30px; */
     text-align: center;
     font-style: normal;
     font-size: var(--acs-copilot-button-font-size);
@@ -653,7 +817,7 @@
     z-index: 3;
   }
 
-  @media (min-width: 1024px) {
+  @media (width>= 1024px) {
     .nav-overlay {
       display: none;
     }

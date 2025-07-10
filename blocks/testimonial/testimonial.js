@@ -1,80 +1,110 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
 export default function decorate(block) {
-  // Extract testimonials data from the block
+  // Style the block wrapper
+  block.style.display = 'flex';
+  block.style.flexDirection = 'column';
+  block.style.alignItems = 'center';
+  block.style.width = '100%';
+  block.style.margin = '0 auto';
+
+  // Extract data from each row's 2nd column
   const testimonialsData = [...block.children].map((row) => {
-    const pictureElement = row.querySelector('picture');
-    const imgElement = pictureElement ? pictureElement.querySelector('img') : null;
+    const col2 = row.querySelector(':scope > div:nth-child(2)');
+    if (!col2) return null;
 
-    // Extract title
-    const titleElement = row.querySelector(':scope > div:nth-child(2)').firstElementChild;
-    const testimonialTitle = titleElement ? titleElement.textContent.trim() : '';
+    // Try to extract author and designation from various elements
+    const headings = col2.querySelectorAll('h1, h2, h3, h4, h5, strong, b');
+    const paragraphs = [...col2.querySelectorAll('p')];
 
-    // Extract paragraphs
-    const paragraphs = row.querySelectorAll('p');
-    // Extract hyperlink from the first <p>
-    const linkElement = paragraphs.length > 0 ? paragraphs[0].querySelector('a') : null;
-    const testimonialLink = linkElement ? `<a href="${linkElement.href}" class="testimonial-link">${linkElement.textContent}</a>` : '';
+    // First try to get author from headings
+    const testimonialAuthor = headings[0]?.textContent.trim() || '';
 
-    // Extract text from the second <p>
-    const testimonialText = paragraphs.length > 1 ? paragraphs[1].textContent.trim() : '';
+    // Try multiple approaches to find designation
+    let testimonialDesignation = '';
 
+    // Approach 1: Check if there's a second heading
+    if (headings.length > 1) {
+      testimonialDesignation = headings[1]?.textContent.trim() || '';
+    }
+
+    // Approach 2: If no designation found, look for a paragraph that might contain it
+    if (!testimonialDesignation && paragraphs.length > 1) {
+      // Check if any paragraph contains common designation indicators
+      const match = paragraphs.find((p) => {
+        const text = p.textContent.trim();
+        return text !== testimonialAuthor
+         && (text.includes('at ')
+        || text.includes('from ')
+        || text.includes(',')
+        || text.length < 50);
+      });
+
+      if (match) {
+        testimonialDesignation = match.textContent.trim();
+      }
+    }
+    const smallText = col2.querySelector('small, em, i');
+    if (!testimonialDesignation && smallText) {
+      testimonialDesignation = smallText.textContent.trim();
+    }
+    const testimonialParagraphs = paragraphs.filter((p) => {
+      const text = p.textContent.trim();
+      return (
+        text !== testimonialAuthor
+    && text !== testimonialDesignation
+    && text.length > 50
+      );
+    });
+
+    const testimonialText = testimonialParagraphs.map((p) => p.innerHTML.trim()).join(' ');
     return {
-      src: imgElement ? imgElement.getAttribute('src') : '',
-      alt: imgElement ? imgElement.getAttribute('alt') : '',
-      testimonialTitle,
-      testimonialLink, // Now properly formatted as an `<a>` tag
+      testimonialAuthor,
+      testimonialDesignation,
       testimonialText,
     };
-  });
-
-  // Generate HTML structure for testimonials
-  const createTestimonialHTML = (items) => items
-    .map((test) => `
-      <div class="testimonial-card">
-        <div class="testimonial-header">
-          ${test.src ? createOptimizedPicture(test.src, test.alt).outerHTML : ''}
-          <div class="testimonial-info">
-            <h5>${test.testimonialTitle}</h5>
-            ${test.testimonialLink ? `<p>${test.testimonialLink}</p>` : ''} <!-- Link inside <p> -->
+  }).filter(Boolean);
+  const createTestimonialHTML = (items) => items.map((test) => `
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        <p class="quote">${test.testimonialText.replace(/&quot;/g, '')}</p>
+        <div class="testimonial-author">
+          <div class="author-info">
+            <p class="author-name">${test.testimonialAuthor}</p>
+            <p class="author-role">${test.testimonialDesignation}</p>
           </div>
         </div>
-        <div class="testimonial-content">
-          <p>${test.testimonialText}</p>
-        </div>
       </div>
-    `).join('');
+    </div>
+  `).join('');
+  const containerDiv = document.createElement('div');
+  containerDiv.className = 'testimonial-container';
+  containerDiv.style.width = '100%';
+  containerDiv.style.maxWidth = '1200px';
+  containerDiv.style.margin = '0 auto';
+  containerDiv.style.display = 'flex';
+  containerDiv.style.justifyContent = 'center';
 
-  // Update block content
-  block.innerHTML = `
+  containerDiv.innerHTML = `
     <div class="testimonial-wrapper">
-      <div class="testimonial-scroll top">
+      <div class="testimonial-scroll">
         <div class="testimonial-content-wrapper">
-          ${createTestimonialHTML(testimonialsData.slice(0, 4))}
-          ${createTestimonialHTML(testimonialsData.slice(0, 4))} <!-- Duplicate for smooth loop -->
-        </div>
-      </div>
-      <div class="testimonial-scroll bottom">
-        <div class="testimonial-content-wrapper">
-          ${createTestimonialHTML(testimonialsData.slice(4))}
-          ${createTestimonialHTML(testimonialsData.slice(4))} <!-- Duplicate for smooth loop -->
+          ${createTestimonialHTML(testimonialsData)}
+          ${createTestimonialHTML(testimonialsData)}
         </div>
       </div>
     </div>
   `;
+  block.innerHTML = '';
+  block.appendChild(containerDiv);
 
-  // Functionality to pause and play the testimonial rows
   const testimonialWrapper = document.querySelector('.testimonial-wrapper');
-
   testimonialWrapper.addEventListener('mouseenter', () => {
-    document.querySelectorAll('.testimonial-content-wrapper').forEach((card) => {
-      card.style.animationPlayState = 'paused';
+    document.querySelectorAll('.testimonial-content-wrapper').forEach((el) => {
+      el.style.animationPlayState = 'paused';
     });
   });
-
   testimonialWrapper.addEventListener('mouseleave', () => {
-    document.querySelectorAll('.testimonial-content-wrapper').forEach((card) => {
-      card.style.animationPlayState = 'running';
+    document.querySelectorAll('.testimonial-content-wrapper').forEach((el) => {
+      el.style.animationPlayState = 'running';
     });
   });
 }
