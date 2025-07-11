@@ -195,6 +195,7 @@ header nav .nav-brand > .default-content-wrapper > p > a:hover {
 
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
+    margin-top: 15px;
   }
 
   header nav .nav-sections .nav-drop {

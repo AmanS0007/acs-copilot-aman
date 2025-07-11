@@ -654,13 +654,13 @@ main {
   }
 
   .button-container a.button {
-    font-size: var(--acs-copilot-button-container-font-size);
+    font-size: 20px;
     font-weight: var(--acs-copilot-button-container-font-weight);
     line-height: var(--acs-copilot-button-container-line-height);
     margin: 0;
     padding: var(--acs-copilot-button-container-padding);
-    min-width: var(--acs-copilot-button-container-min-width);
-    min-height: var(--acs-copilot-button-container-min-height);
+    min-width: 50px;
+    min-height: 15px;
     border-radius: var(--acs-copilot-button-container-border-radius);
   }
 

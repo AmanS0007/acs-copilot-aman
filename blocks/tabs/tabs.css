@@ -1,4 +1,4 @@
-  /* Tab block styles */
+/* Tab block styles */
 .tabs.block {
   margin-top: var(--acs-tabs-margin-top);
   display: flex;
@@ -47,7 +47,7 @@
   margin: var(--acs-tabs-margin);
   cursor: pointer;
   font-size: var(--acs-tabs-font-size);
-  min-width: var(--acs-tabs-min-width);
+  width: 200px; /* Increased width to fit all text */
   border-radius: var(--acs-tabs-border-radius);
   transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
   display: flex;
@@ -81,6 +81,7 @@
   margin-right: var(--acs-tabs-tab-media-margin-right);
   transition: filter 0.3s;
   filter: brightness(1) invert(1);
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .tab-button::before {
@@ -255,6 +256,7 @@
   
   .tab-button {
     margin: 5px;
+    width: 160px; /* Increased width for mobile */
   }
   
   .tab-content {
