@@ -27,7 +27,25 @@ function handleVideoEmbedding(block) {
   videoContainer.appendChild(videoElement);
 }
 
+// Function to add a class to the subtitle paragraph
+function styleSubtitleParagraph(block) {
+  // Find all paragraphs in the block
+  const paragraphs = block.querySelectorAll('p');
+  // Loop through paragraphs to find the one with "Deliver more with less" text
+  paragraphs.forEach((paragraph) => {
+    if (paragraph.textContent.trim() === 'Deliver more with less') {
+      // Add a class to the paragraph
+      paragraph.classList.add('hero-subtitle');
+      // Set inline styles with !important to override any other styles
+      paragraph.style.cssText = 'font-size: 28px; font-weight: 500; margin-top: 10px; margin-bottom: 20px;';
+    }
+  });
+}
+
 // Main function to decorate the block by adding styling and embedding video
 export default function decorate(block) {
+  // Style the subtitle paragraph
+  styleSubtitleParagraph(block);
+  // Handle video embedding
   handleVideoEmbedding(block);
 }
